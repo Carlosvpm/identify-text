@@ -4,17 +4,13 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 
-urls = ["https://vidav.com.br/", 'https://vidav.com.br/sobre/', 'https://vidav.com.br/rede/', 'https://vidav.com.br/especialidades/nutricionista/', 'https://vidav.com.br/ajuda/', 'https://vidav.com.br/saude-v/']
+urls = ['url']
+search_text = "termo"
 
-try:
-    
+try:    
     for url in urls: 
-        driver.get(url)
-        search_text = "Vida V"
+        driver.get(url)    
         text_elements = driver.find_elements("xpath", "//*[contains(text(), '" + search_text + "')]")
-        
-
-        
 
         count = 0
         for element in text_elements:
