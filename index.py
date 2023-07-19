@@ -1,15 +1,20 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+import time
 
 driver = webdriver.Chrome()
 
-urls = ['url']
+
+# Adicione as urls que deseja buscar
+urls = ['url', 'url']
+
+# Substitua o aqui o texto que deseja buscar
 search_text = "termo"
 
 try:    
     for url in urls: 
         driver.get(url)    
+        time.sleep(10)    
         text_elements = driver.find_elements("xpath", "//*[contains(text(), '" + search_text + "')]")
 
         count = 0
